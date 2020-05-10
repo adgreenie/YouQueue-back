@@ -10,6 +10,9 @@ app.use(parser.json())
 const userRouter = require("./routes/userRouter")
 app.use('/users', userRouter)
 
+const postRouter = require("./routes/postRouter")
+app.use('/posts', postRouter)
+
 app.set("port", process.env.PORT || 8080)
 
 app.listen(app.get("port"), () => {

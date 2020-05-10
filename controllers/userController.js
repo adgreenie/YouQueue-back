@@ -10,11 +10,11 @@ const getAllUsers = (req, res) => {
 }
 
 const getUserBySN = (req, res) => {
-    User.findOne({ username: req.params.username }).then(user => {
+    User.findOne({ sn: req.params.sn }).then(user => {
         res.json(user) 
     }).catch(err => {
         console.log(err)
-        res.send(`Could not retrieve user "${req.params.username}"`)
+        res.send(`Could not retrieve user "${req.params.sn}"`)
     })
 }
 
@@ -23,26 +23,26 @@ const createUser = (req, res) => {
         res.json(user)
     }).catch(err => {
         console.log(err)
-        res.send(`Error creating user "${req.body.username}"...this username may already be claimed`)
+        res.send(`Error creating user "${req.body.sn}"...this sn may already be claimed`)
     })
 }
 
 const updateUser = (req, res) => {
-    User.findOneAndUpdate({ username: req.params.username }, req.body)
+    User.findOneAndUpdate({ sn: req.params.sn }, req.body)
         .then(user => {
             res.json(user)
     }).catch(err => {
         console.log(err)
-        res.send("Could not update user...are you trying to change username to one that's already claimed?")
+        res.send("Could not update user...are you trying to change sn to one that's already claimed?")
     })
 }
 
 const deleteUser = async (req, res) => {
-    const user = await User.deleteOne({ username: req.params.username }).then(user => {
-        res.send(`The user "${user.username}" has been deleted`)
+    User.deleteOne({ sn: req.params.sn }).then(user => {
+        res.send(`The user "${user.sn}" has been deleted`)
     }).catch(err => {
         console.log(err)
-        res.send(`Could not delete user with username: "${req.params.username}"`)
+        res.send(`Could not delete user with sn: "${req.params.sn}"`)
     })
 }
 
