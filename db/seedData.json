@@ -1,22 +1,26 @@
 {
     "users": [
         {
-            "sn": "adam",
+            "username": "adam",
+            "password": "password123",
             "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "friends": ["archie", "nugget"]
         },
         {
-            "sn": "mary",
+            "username": "mary",
+            "password": "password123",
             "bio": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "friends": ["archie", "nugget"]
         },
         {
-            "sn": "archie",
+            "username": "archie",
+            "password": "password123",
             "bio": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             "friends": ["adam", "mary"]
         },
         {
-            "sn": "nugget",
+            "username": "nugget",
+            "password": "password123",
             "bio": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             "friends": ["adam", "mary"]
         }

@@ -4,9 +4,9 @@ const postController = require("../controllers/postController")
 
 router.get("/", postController.getAllPosts)
 
-router.get("/sn/:sn", postController.getPostsByRecipient)
+router.get("/username/:username", postController.getPostsByRecipient)
 
-router.get("/id/:id", postController.getPostByID)
+router.get("/id/:id", postController.getPostById)
 
 router.post("/", postController.createPost)
 

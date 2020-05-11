@@ -1,6 +1,7 @@
 const User = require('../models/User')
 const Post = require('../models/Post')
 const seedData = require('./seedData.json')
+const bcrypt = require('bcrypt')
 
 async function seedDB() {
     try {
@@ -8,11 +9,15 @@ async function seedDB() {
         await Post.deleteMany({})
 
         seedData.users.forEach(user => {
-            User.create({
-                sn: user.sn,
-                bio: user.bio,
-                friends: user.friends
-            })
+            bcrypt.hash(user.password, 10, function(err, hash) {
+                console.log('HASHED PASSWORDS',hash)
+                User.create({
+                    username: user.username,
+                    password: hash,
+                    bio: user.bio,
+                    friends: user.friends
+                })
+            })            
         })
 
         seedData.posts.forEach(post => {

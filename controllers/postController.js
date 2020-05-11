@@ -10,15 +10,15 @@ const getAllPosts = (req, res) => {
 }
 
 const getPostsByRecipient = (req, res) => {
-    Post.find({ sn: req.params.sn }).then(posts => {
+    Post.find({ username: req.params.username }).then(posts => {
         res.json(posts)
     }).catch(err => {
         console.log(err)
-        res.send(`Error loading posts by "${req.params.sn}"`)
+        res.send(`Error loading posts by "${req.params.username}"`)
     })
 }
 
-const getPostByID = (req, res) => {
+const getPostById = (req, res) => {
     Post.findOne({ _id: req.params.id }).then(post => {
         res.json(post)
     }).catch(err => {
@@ -48,7 +48,7 @@ const updatePost = (req, res) => {
 
 const deletePost = async (req, res) => {
     Post.deleteOne({ _id: req.params.id }).then(post => {
-        res.send(`${post.sn}'s post "${post.body}" has been deleted`)
+        res.send(`${post.username}'s post "${post.body}" has been deleted`)
     }).catch(err => {
         console.log(err)
         res.send(`Could not delete post with ID: "${req.params.id}"`)
@@ -58,7 +58,7 @@ const deletePost = async (req, res) => {
 module.exports = {
     getAllPosts,
     getPostsByRecipient,
-    getPostByID,
+    getPostById,
     createPost,
     updatePost,
     deletePost

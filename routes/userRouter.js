@@ -4,12 +4,12 @@ const userController = require("../controllers/userController")
 
 router.get("/", userController.getAllUsers)
 
-router.get("/sn/:sn", userController.getUserBySN)
+router.get("/username/:username", userController.getUserByUsername)
 
 router.post("/", userController.createUser)
 
-router.put("/sn/:sn", userController.updateUser)
+router.put("/username/:username", userController.updateUser)
 
-router.delete("/sn/:sn", userController.deleteUser)
+router.delete("/username/:username", userController.deleteUser)
 
 module.exports = router
