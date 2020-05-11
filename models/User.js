@@ -1,4 +1,5 @@
 const mongoose = require('../db/connection')
+mongoose.set('useCreateIndex', true)
 const Schema = mongoose.Schema
 const uniqueValidator = require('mongoose-unique-validator')
 
