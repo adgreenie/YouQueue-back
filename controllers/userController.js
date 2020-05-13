@@ -18,6 +18,15 @@ const getUserByUsername = (req, res) => {
     })
 }
 
+const getUsernameExists = (req, res) => {
+    User.exists({ username: req.params.username }).then(exists => {
+        res.json(exists) 
+    }).catch(err => {
+        console.log(err)
+        res.send(`Error checking if user "${req.params.username}" exists`)
+    })
+}
+
 const createUser = (req, res) => {
     User.create(req.body).then(user => {
         res.json(user)
@@ -49,6 +58,7 @@ const deleteUser = async (req, res) => {
 module.exports = {
     getAllUsers,
     getUserByUsername,
+    getUsernameExists,
     createUser,
     updateUser,
     deleteUser

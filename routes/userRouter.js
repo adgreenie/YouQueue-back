@@ -6,6 +6,8 @@ router.get("/", userController.getAllUsers)
 
 router.get("/username/:username", userController.getUserByUsername)
 
+router.get("/check/:username", userController.getUsernameExists)
+
 router.post("/", userController.createUser)
 
 router.put("/username/:username", userController.updateUser)
