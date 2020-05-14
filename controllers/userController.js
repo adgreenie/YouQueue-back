@@ -13,7 +13,7 @@ const getAllUsers = (req, res) => {
 }
 
 const getUserByUsername = (req, res) => {
-  User.findOne({ username: req.params.username })
+  User.findOne({ username: new RegExp("^" + req.params.username + "$", "i") })
     .then((user) => {
       res.json(user)
     })
