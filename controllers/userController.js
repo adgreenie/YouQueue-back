@@ -24,7 +24,7 @@ const getUserByUsername = (req, res) => {
 }
 
 const getUsernameExists = (req, res) => {
-  User.exists({ username: req.params.username })
+  User.exists({ username: new RegExp("^" + req.params.username + "$", "i") })
     .then((exists) => {
       res.json(exists)
     })

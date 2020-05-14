@@ -10,7 +10,6 @@ const UserSchema = new Schema({
     unique: true,
     uniqueCaseInsensitive: true,
   },
-  username_lower: { type: String, default: this.username.toLower() },
   password: { type: String, required: true },
   image: {
     type: String,
