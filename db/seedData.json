@@ -1,42 +1,34 @@
 {
-    "users": [
-        {
-            "username": "adam",
-            "password": "password123",
-            "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "friends": ["archie", "nugget"]
-        },
-        {
-            "username": "mary",
-            "password": "password123",
-            "bio": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "friends": ["archie", "nugget"]
-        },
-        {
-            "username": "archie",
-            "password": "password123",
-            "bio": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-            "friends": ["adam", "mary"]
-        },
-        {
-            "username": "nugget",
-            "password": "password123",
-            "bio": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "friends": ["adam", "mary"]
-        }
-    ],
-    "posts": [
-        {
-            "sender": "archie",
-            "recipient": "adam",
-            "message": "woof woof",
-            "video": "https://www.youtube.com/watch?v=yiet836y-6w"
-        },
-        {
-            "sender": "adam",
-            "recipient": "archie",
-            "message": "I think you'll like this one...",
-            "video": "https://www.youtube.com/watch?v=Qkuu0Lwb5EM"
-        }
-    ]
+  "users": [
+    {
+      "username": "adam",
+      "password": "password123"
+    },
+    {
+      "username": "mary",
+      "password": "password123"
+    },
+    {
+      "username": "archie",
+      "password": "password123"
+    },
+    {
+      "username": "nugget",
+      "password": "password123"
+    }
+  ],
+  "posts": [
+    {
+      "sender": "archie",
+      "recipient": "adam",
+      "message": "woof woof",
+      "video": "https://www.youtube.com/watch?v=yiet836y-6w"
+    },
+    {
+      "sender": "adam",
+      "recipient": "archie",
+      "message": "I think you'll like this one...",
+      "video": "https://www.youtube.com/watch?v=Qkuu0Lwb5EM"
+    }
+  ]
 }
