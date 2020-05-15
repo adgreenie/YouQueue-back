@@ -22,13 +22,13 @@
       "sender": "archie",
       "recipient": "adam",
       "message": "woof woof",
-      "video": "https://www.youtube.com/watch?v=yiet836y-6w"
+      "video": "yiet836y-6w"
     },
     {
       "sender": "adam",
       "recipient": "archie",
       "message": "I think you'll like this one...",
-      "video": "https://www.youtube.com/watch?v=Qkuu0Lwb5EM"
+      "video": "Qkuu0Lwb5EM"
     }
   ]
 }
