@@ -61,20 +61,19 @@ const updateUser = (req, res) => {
 }
 
 const deleteUser = async (req, res) => {
-  User.deleteOne({ username: req.params.username })
-    .then(() => {
-      Post.deleteMany({
-        $or: [
-          { sender: req.params.username },
-          { recipient: req.params.username },
-        ],
-      })
-      res.send(`The user "${req.params.username}" has been deleted`)
+  try {
+    await User.deleteOne({ username: req.params.username })
+    await Post.deleteMany({
+      $or: [
+        { sender: req.params.username },
+        { recipient: req.params.username },
+      ],
     })
-    .catch((err) => {
-      console.log(err)
-      res.send(`Could not delete user with username: "${req.params.username}"`)
-    })
+    res.send(`The user "${req.params.username}" has been deleted`)
+  } catch (err) {
+    console.log(err)
+    res.send(`Could not delete user with username: "${req.params.username}"`)
+  }
 }
 
 module.exports = {
